@@ -52,3 +52,14 @@ for (let s of sliceArr) {
 //      [ 4, 5 ]
 
 ```
+
+
+## Authors
+
+* **Antonio Musolino** - [antoniomuso](https://github.com/antoniomuso)
+
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
