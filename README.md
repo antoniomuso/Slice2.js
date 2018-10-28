@@ -40,9 +40,9 @@ var arr = [
 ]
 
 // it slice recursive the array
-var sliceArr = slice(elem) 
+var sliceArr = slice(arr) 
 
-arr['1::'] // [ [ 2, 4, 5 ] ]
+sliceArr['1::'] // [ [ 2, 4, 5 ] ]
 
 for (let s of sliceArr) {
     console.log(s['1::']) 
