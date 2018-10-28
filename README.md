@@ -35,8 +35,8 @@ const slice = require('slice2')
 const arr = slice([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
 
 
-arr[':-2'];  		// [1, '2', 3, '4', 5, '6', 7, '8']
-arr[':-2']['2::']  //  [3, '4', 5, '6', 7, '8']
+arr[':-2'];  	   // [1, '2', 3, '4', 5, '6', 7, '8']
+arr[':-2']['2::']  // [3, '4', 5, '6', 7, '8']
 
 
 const tab = [
@@ -47,7 +47,7 @@ const tab = [
 // it slice recursive the array
 var sliceArr = slice(tab) 
 
-sliceArr['1::'] // [ [ 2, 4, 5 ] ]
+sliceArr['1::']   // [ [ 2, 4, 5 ] ]
 
 for (let s of sliceArr) {
     console.log(s['1::']) 
