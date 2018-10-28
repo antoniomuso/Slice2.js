@@ -1,5 +1,5 @@
 # Slice2.js
-Extension of repo [Slice.js](https://github.com/hustcc/slice.js)
+Slice2.js is a extensions of repo [slice.js](https://github.com/hustcc/slice.js)
 
 ## Slice.js
 ```javascript
