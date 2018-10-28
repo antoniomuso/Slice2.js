@@ -1,2 +1,2 @@
-module.exports = require('./lib/slice');
+module.exports = require('./lib/slice2');
 
