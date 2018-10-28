@@ -34,13 +34,13 @@ arr[':-2'];  		// [1, '2', 3, '4', 5, '6', 7, '8']
 arr[':-2']['2::']  //  [3, '4', 5, '6', 7, '8']
 
 
-var arr = [
+const tab = [
     [1,2,3],
     [2,4,5]
 ]
 
 // it slice recursive the array
-var sliceArr = slice(arr) 
+var sliceArr = slice(tab) 
 
 sliceArr['1::'] // [ [ 2, 4, 5 ] ]
 
