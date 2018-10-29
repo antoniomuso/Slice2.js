@@ -3,13 +3,17 @@
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/antoniomuso/Slice2.js.git"
   },
   "author": "Antonio Musolino",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }
