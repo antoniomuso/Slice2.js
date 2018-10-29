@@ -35,8 +35,50 @@ describe('nano-slice', () => {
   
       expect(slice(arr)[':20']).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
     });
+
+    test('array of array', () => {
+      const arr = [
+          [1, '2', 3, '4', 5, '6', 7, '8', 9, '0'],
+          [1, '2', 3, '4', 5, '6', 7, '8', 9, '0'],
+          ['0', 9, '8', 7, '6', 5, '4', 3, '2']
+        ];
+  
+      expect(slice(arr)['1']).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
+      expect(slice(arr)[1]).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
+  
+      expect(slice(arr)['-2']).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
+      expect(slice(arr)[-2]).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
+  
+      expect(slice(arr)[0]['0:3']).toEqual([1, '2', 3]);
+      expect(slice(arr)[0]['2:5']).toEqual([3, '4', 5]);
+  
+      expect(slice(arr)[0][':2']).toEqual([1, '2']);
+      expect(slice(arr)[0][':-2']).toEqual([1, '2', 3, '4', 5, '6', 7, '8']);
+  
+      expect(slice(arr)[0]['2:']).toEqual([3, '4', 5, '6', 7, '8', 9, '0']);
+      expect(slice(arr)[0]['-2:']).toEqual([9, '0']);
+  
+      expect(slice(arr)[0][':']).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
+  
+      expect(slice(arr)[0]['::3']).toEqual([1, '4', 7, '0']);
+      expect(slice(arr)[0]['1:5:2']).toEqual(['2', '4']);
+  
+      expect(slice(arr)[0]['-5:-1']).toEqual(['6', 7, '8', 9]);
+      expect(slice(arr)[0]['-5:-1:2']).toEqual(['6', '8']);
+      expect(slice(arr)[1]['5:1:-2']).toEqual(['6', '4']);
+      expect(slice(arr)[0]['-1:0:-1']).toEqual(['0', 9, '8', 7, '6', 5, '4', 3, '2']);
+  
+      expect(slice(arr)[0]['-1:-5']).toEqual([]);
+      expect(slice(arr)[0]['-5:-1:-1']).toEqual([]);
+  
+      expect(slice(arr)[0][':20']).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0'])
+
+
+    })
+
     test('string', () => {
       const str = '1234567890';
+
       expect(slice(str)[200]).toEqual(undefined);
   
       expect(slice(str)['2']).toEqual('3');
@@ -47,8 +89,6 @@ describe('nano-slice', () => {
   
       expect(slice(str)['0:3']).toEqual('123');
       expect(slice(str)['2:5']).toEqual('345');
-      
-  
       expect(slice(str)[':2']).toEqual('12');
       expect(slice(str)[':-2']).toEqual('12345678');
   
