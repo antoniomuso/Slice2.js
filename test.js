@@ -16,6 +16,7 @@ describe('nano-slice', () => {
   
       expect(slice(arr)[':2']).toEqual([1, '2']);
       expect(slice(arr)[':-2']).toEqual([1, '2', 3, '4', 5, '6', 7, '8']);
+      expect(slice(arr)[':-2:']).toEqual([1, '2', 3, '4', 5, '6', 7, '8']);
   
       expect(slice(arr)['2:']).toEqual([3, '4', 5, '6', 7, '8', 9, '0']);
       expect(slice(arr)['-2:']).toEqual([9, '0']);
@@ -32,6 +33,10 @@ describe('nano-slice', () => {
   
       expect(slice(arr)['-1:-5']).toEqual([]);
       expect(slice(arr)['-5:-1:-1']).toEqual([]);
+
+      expect(slice(arr)['::-1']).toEqual(['0', 9, '8', 7, '6', 5, '4', 3, '2', 1]);
+      expect(slice(arr)['::-2']).toEqual(['0', '8', '6', '4', '2']);
+
   
       expect(slice(arr)[':20']).toEqual([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
     });
@@ -86,6 +91,8 @@ describe('nano-slice', () => {
 
       expect(slice(str)[200]).toEqual(undefined);
   
+
+      expect(slice(str)['::1']).toEqual('1234567890');
       expect(slice(str)['2']).toEqual('3');
       expect(slice(str)[2]).toEqual('3');
   
