@@ -38,11 +38,17 @@ const arr = slice([1, '2', 3, '4', 5, '6', 7, '8', 9, '0']);
 arr[':-2'];  	   // [1, '2', 3, '4', 5, '6', 7, '8']
 arr[':-2']['2::']  // [3, '4', 5, '6', 7, '8']
 
+var value = 3
+arr[`${value}::`] // ['4', 5, '6', 7, '8', 9, '0']
 
 const tab = [
     [1,2,3],
     [2,4,5]
 ]
+
+
+
+
 
 // it slice recursive the array
 var sliceArr = slice(tab) 
