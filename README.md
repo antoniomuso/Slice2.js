@@ -1,7 +1,8 @@
 # Slice2.js [![Build Status](https://travis-ci.org/antoniomuso/Slice2.js.svg?branch=master)](https://travis-ci.org/antoniomuso/Slice2.js)
 Slice2.js is a extensions of repo [slice.js](https://github.com/hustcc/slice.js),
 Slice2.js allows to use slice operator like python.
-
+## Install
+`npm install slice2`
 ## Slice.js
 ```javascript
 const slice = require('slice2')
